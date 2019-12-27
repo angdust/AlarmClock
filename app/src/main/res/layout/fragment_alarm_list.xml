@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.alarmclock.alarmlist.AlarmListViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".alarmlist.AlarmListFragment">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/alarm_list_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_alarm" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/alarm_list_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icc_plus"
+            android:layout_gravity="end|bottom"
+            android:layout_margin="16dp" />
+
+        <TextView
+            android:id="@+id/no_alarms_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/no_alarms_yet_text" />
+    </FrameLayout>
+</layout>
